@@ -38,14 +38,14 @@ $result = mysqli_query($link, $sqlCommand);
 
         <div data-role="content">
             <ul data-role="listview" data-filter="true">
-                <?php while($row = mysqli_fetch_assoc($result)) : ?>
-                <li>
-                    <a href="employeeDetails.php?id=<?= $row["id"] ?>">
-                        <img src="images/<?= $row["picture"] ?>">
-                        <h4><?= $row["firstName"]." ".$row["lastName"] ?></h4>
-                        <p><?= $row["title"] ?> </p> <span class="ui-li-count"><?= $row["reportCount"] ?></span>
-                    </a>
-                </li>
+                <?php while ($row = mysqli_fetch_assoc($result)) : ?>
+                    <li>
+                        <a href="employeeDetails.php?id=<?= $row["id"] ?>">
+                            <img src="images/<?= $row["picture"] ?>">
+                            <h4><?= $row["firstName"] . " " . $row["lastName"] ?></h4>
+                            <p><?= $row["title"] ?> </p> <span class="ui-li-count"><?= $row["reportCount"] ?></span>
+                        </a>
+                    </li>
 
                 <?php endwhile ?>
 
