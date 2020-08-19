@@ -1,8 +1,8 @@
 <?php
 	
-	$dbhost = 'localhost';
+	$dbhost = 'localhost:8889';
 	$dbuser = 'root';
-	$dbpass = '';
+	$dbpass = 'root';
 	$dbname = 'directory';
 
 ?>

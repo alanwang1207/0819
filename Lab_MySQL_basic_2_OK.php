@@ -13,18 +13,29 @@ mysqli_select_db($link, "class");
 $commandText = "select * from students";
 $result = mysqli_query($link, $commandText);
 var_dump($result); //object
+echo "<br>";
+echo $result->num_rows;
+echo "<br>";
+
+$row = mysqli_fetch_assoc($result);
+var_dump($row); //object
+echo "<br>";
 
 // 3. 處理查詢結果
 while ($row = mysqli_fetch_assoc($result))
 {
+  //echo $row['cName'];
+  //echo "ID：$row[cID]<br>";
   echo "ID：{$row['cID']}<br>";
-  echo "Name：{$row['cName']}<br>";
+  echo "Name：". $row['cName']."<br>";
   echo "Sex：{$row['cSex']}<br>";
   echo "Birthday：{$row['cBirthday']}<br>";
   echo "Email：{$row['cEmail']}<br>";
   echo "<HR>";
 }
-
+$row = mysqli_fetch_assoc($result);
+var_dump($row); //object
+echo "<br>";
 // 4. 結束連線
 mysqli_close($link);
 
