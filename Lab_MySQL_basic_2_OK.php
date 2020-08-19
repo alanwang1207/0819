@@ -12,6 +12,7 @@ mysqli_select_db($link, "class");
 // 2. 執行 SQL 敘述
 $commandText = "select * from students";
 $result = mysqli_query($link, $commandText);
+var_dump($result); //object
 
 // 3. 處理查詢結果
 while ($row = mysqli_fetch_assoc($result))
